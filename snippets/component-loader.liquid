@@ -1,0 +1,29 @@
+{%- render "components" -%}
+
+<script type="text/javascript">
+  const components = window.components || {}
+
+  class ComponentLoader extends HTMLElement {
+    constructor() {
+      super();
+      Object.keys(components).forEach((component) => {
+        if (this.querySelector(component)) {
+          this.injectScript(components[component], component);
+          delete components[component];
+        }
+      });
+    }
+    injectScript(src, element) {
+      const elScript = document.createElement("script");
+      elScript.type = "module";
+      elScript.src = src;
+      document.body.appendChild(elScript);
+      elScript.addEventListener("error", () =>
+        document
+          .querySelectorAll(element)
+          .forEach((el) => el.classList.add("no-js"))
+      );
+    }
+  }
+  customElements.define("component-loader", ComponentLoader);
+</script>

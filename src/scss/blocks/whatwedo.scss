@@ -1,0 +1,129 @@
+.whatwe-do{
+  width: 100%;
+  color: #111;
+  font-family: "Syne";
+  margin-top: 100px;
+}
+
+.whatwe-do--box{
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+
+  h2{
+    font-family: "Syne";
+    font-weight: 800;
+    max-width: 630px;
+    font-size: 36px;
+  }
+}
+
+.whatwe-do--content{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: flex-start;
+  p{
+    font-weight: 600;
+    max-width: 500px;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+  }
+
+  button{
+    font-size: 18px;
+    padding: 14px 20px;
+    border: none;
+    background-color: var(--dark);
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .whatwe-do--box{
+    h2{
+      font-size: 28px;
+      max-width: 500px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .whatwe-do{
+    margin-top: 70px;
+  }
+}
+
+
+@media only screen and (max-width: 992px) {
+  .whatwe-do--box{
+    max-width: 90%;
+    margin: 0 auto;
+    h2{
+      max-width: 100%;
+      font-size: 32px;
+    }
+    flex-direction: column;
+  }
+
+  .whatwe-do--content{
+    p{
+      max-width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+
+  .whatwe-do--box{
+    max-width: 100%;
+  }  
+
+  .whatwe-do--box{
+    h2{
+      font-size: 26px;
+    }
+
+    p{
+      font-size: 18px;
+    }
+  }
+
+  .whatwe-do--content{
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  .whatwe-do--box{
+    h2{
+      font-size: 22px;
+    }
+  }
+  
+
+  .hero-video-controller{
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media only screen and (max-width: 552px) {
+  .whatwe-do--box{
+    h2{
+      font-size: 18px;
+    }
+
+    p{
+      font-size: 16px;
+      line-height: 34px;
+    }
+  }
+}

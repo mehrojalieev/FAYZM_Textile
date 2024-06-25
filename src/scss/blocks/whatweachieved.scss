@@ -1,0 +1,102 @@
+.whatwe-achieved{
+    margin-top: 100px;
+}
+.whatwe__achieved-title{
+    font-size: 50px;
+    font-weight: 800;
+    font-family: "Syne";
+}
+
+.achieved__card-wrapper{
+    margin-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 0 30px;
+}
+.achieved-card{
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    number-counter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        font-size: 50px;
+        font-weight: 600;
+        letter-spacing: 1.7px;
+        font-family: "Inter";
+    }
+    img{
+        width: 110px;
+        height: 110px;
+    }
+
+    p{
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 1.7px;
+        font-family: "Inter";
+        text-transform: uppercase;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .achieved__card-wrapper{
+        display: grid;
+        justify-content: center;
+        gap: 100px 30px;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 60px;
+    }
+
+    .achieved-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+
+        img{
+            width: 90px;
+            height: 90px;
+        }
+
+        number-counter{
+            font-size: 40px;
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .achieved-card{
+        img{
+            width: 60px;
+            height: 60px;
+        }
+
+        number-counter{
+            font-size: 30px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .achieved__card-wrapper{
+        grid-template-columns: 1fr;
+    }
+
+    .achieved-card{
+        img{
+            width: 90px;
+            height: 90px;
+        }
+
+        number-counter{
+            font-size: 40px;
+        }
+    }
+}

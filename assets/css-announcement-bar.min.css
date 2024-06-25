@@ -1,0 +1,16 @@
+.announcement-bar {
+  font-family: "Syne";
+}
+
+.announcement-bar__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  font-size: 14px;
+}
+
+.announcement-bar__wrapper a {
+  color: var(--light) !important;
+  text-underline-offset: 4px;
+}

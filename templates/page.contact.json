@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "banner_FPnG7w": {
+      "type": "banner",
+      "settings": {
+        "banner_poster": "shopify:\/\/shop_images\/4K3A3243_1_4_1.png",
+        "banner_image_or_video": true,
+        "banner_text": "contact fayz-m"
+      }
+    },
+    "Contact": {
+      "type": "Contact",
+      "blocks": {
+        "contact_item_mUndJt": {
+          "type": "contact_item",
+          "settings": {
+            "contact_type": "Address",
+            "contact_content": "<p>Andijon, Khjuabod, 20<\/p>"
+          }
+        },
+        "contact_item_Qez8Ta": {
+          "type": "contact_item",
+          "settings": {
+            "contact_type": "Phone number",
+            "contact_content": "<p><a href=\"tel:+998901234567\" title=\"tel:+998901234567\">+998901234567<\/a><\/p>"
+          }
+        },
+        "contact_item_fdrQYF": {
+          "type": "contact_item",
+          "settings": {
+            "contact_type": "Email",
+            "contact_content": "<p><a href=\"mailto:fayzm@gmail.com\" title=\"mailto:fayzm@gmail.com\">fayzm@gmail.com<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "contact_item_mUndJt",
+        "contact_item_Qez8Ta",
+        "contact_item_fdrQYF"
+      ],
+      "settings": {
+        "contact_map": "<iframe src=\"https:\/\/yandex.com\/map-widget\/v1\/?um=constructor%3Adea30e4e662d40a9d40482d29fb86890300ab3083ad6f03bd6e666381c081b3d&amp;source=constructor\" width=\"100%\" height=\"500\" frameborder=\"0\"><\/iframe>"
+      }
+    }
+  },
+  "order": [
+    "banner_FPnG7w",
+    "Contact"
+  ]
+}

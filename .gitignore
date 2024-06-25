@@ -1,0 +1,34 @@
+# ignore all files starting with . or ~
+.*
+~*
+
+/node_modules
+/config/settings_data.json
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# track these files, if they exist
+!/.github
+!.gitkeep
+!.gitignore
+!.editorconfig
+!.eslintrc.json
+!.eslintignore
+!.prettierrc.json
+!.prettierignore
+!.stylelintrc.json
+!.husky
+!.prettier
+!README.md
+!CHANGELOG.md
+!composer.json
+
+avextheme.zip

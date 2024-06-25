@@ -1,0 +1,26 @@
+{% comment %}
+  Includes <sript> to JS
+  Accepts:
+  - name: {String}
+  - loading: {String}
+    - 'normal' (default)
+    - 'defer'
+  Usage:
+  {% render 'script', name: 'product-card', loading: 'defer' %}
+{% endcomment %}
+
+{% liquid
+  assign script_path = name
+  unless name contains '.js'
+    assign script_path = script_path | append: '.min.js' | prepend: 'js-' | asset_url
+  endunless
+-%}
+
+<link rel="preload" href="{{ script_path }}" as="script">
+<script
+  src="{{ script_path }}"
+  {%- if loading == 'defer' -%}
+    defer="defer"
+  {%- endif -%}
+>
+</script>

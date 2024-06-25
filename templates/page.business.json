@@ -1,0 +1,11 @@
+{
+    "sections": {
+      "business-banner": {
+        "type": "business-banner"
+      }
+    },
+    "order": [
+      "business-banner"
+    ]
+  }
+  

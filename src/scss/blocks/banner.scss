@@ -1,0 +1,114 @@
+.banner {
+  display: flex;
+  height: calc(100vh - 40px);
+  margin-top: -68px;
+  position: relative;
+}
+
+.banner > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(130%) contrast(120%) brightness(90%);
+}
+
+.banner > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-video-controller {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  backdrop-filter: blur(15px);
+  background-color: var(--lighter-dark);
+  cursor: pointer;
+}
+
+.hero-banner__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: linear-gradient(135deg, #000 20%, rgba(0,0,0,0.5280768557422969) 40%, rgba(255,255,255,0) 76%);
+  display: flex;
+  align-items: flex-end;
+  h1{
+    color: #fff;
+    font-family: "Syne";
+    font-size: 80px;
+    font-weight: 900;
+    text-transform: uppercase;
+    max-width: 660px;
+    padding-bottom: 80px;
+  }
+}
+
+.hero-video-controller[data-video-muted="true"] svg:last-child {
+  display: none;
+}
+
+.hero-video-controller[data-video-muted="false"] > svg:last-child {
+  display: block;
+}
+
+.hero-video-controller[data-video-muted="false"] > svg:first-child {
+  display: none;
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .banner {
+    margin-top: -50px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1.1;
+  }
+
+  .hero-banner__overlay h1{
+    max-width: 370px;
+    font-size: 50px;
+    padding-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .banner {
+    margin-top: 0;
+  }
+
+  .hero-banner__overlay h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+
+  .smaller-title{
+    max-width: 300px !important;
+  }
+}
+
+@media only screen and (max-width: 552px) {
+  .hero-banner__overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h1{
+      margin: 0 auto;
+    }
+  }
+}

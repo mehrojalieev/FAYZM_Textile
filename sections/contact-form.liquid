@@ -1,0 +1,77 @@
+{%- render 'stylesheet', name: 'contact-form' -%}
+
+<section id='discuss' class="discuss__wrapper">
+  <div class="container">
+    {% if section.settings.discuss_title %}
+      <h2>{{ section.settings.discuss_title }}</h2>
+    {% endif %}
+    {% if section.settings.discuss_text %}
+      <p>{{ section.settings.discuss_text }}</p>
+    {% endif %}
+    <form class="discuss__form">
+      <div>
+        {% if section.settings.discuss_name_input %}
+          <input required minlength="1" type="text" placeholder="{{ section.settings.discuss_name_input }}">
+        {% endif %}
+        {% if section.settings.discuss_phone_input %}
+          <input required minlength="1" type="text" placeholder="{{ section.settings.discuss_phone_input }}">
+        {% endif %}
+      </div>
+      {% if section.settings.discuss_description_input %}
+        <textarea placeholder="{{ section.settings.discuss_description_input }}" class="discuss__description"></textarea>
+      {% endif %}
+      
+      {% if section.settings.discuss_text_btn %}
+        <button class="link-regular" > {{ section.settings.discuss_text_btn }} </button>
+      {% endif %}
+    </form>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [ 
+    {
+      "type": "text",
+      "id": "discuss_title",
+      "label": "Discuss title",
+      "default": "Discuss title"
+    },
+    {
+      "type": "text",
+      "id": "discuss_text",
+      "label": "Discuss text",
+      "default": "Discuss text"
+    },
+    {
+      "type": "text",
+      "id": "discuss_name_input",
+      "label": "Discuss name input text",
+      "default": "Discuss name input text"
+    },
+    {
+      "type": "text",
+      "id": "discuss_phone_input",
+      "label": "Discuss phone input text",
+      "default": "Discuss phone input text"
+    },
+    {
+      "type": "text",
+      "id": "discuss_description_input",
+      "label": "Discuss description input text",
+      "default": "Discuss description input text"
+    },
+    {
+      "type": "text",
+      "id": "discuss_text_btn",
+      "label": "Discuss button text"
+    }
+  ],
+  "presets": [
+    {
+        "name": "Contact form"
+    }
+  ]
+}
+{% endschema %}

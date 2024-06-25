@@ -1,0 +1,54 @@
+{%- render 'stylesheet', name: 'whoweare' -%}
+<section class="whoweare" id="whoweare">
+  <div class="container">
+    <div class="whowe__are-content">
+      {% if section.settings.whoweare_title %}
+        <h3>{{ section.settings.whoweare_title }}</h3>
+      {% endif %}
+      {% if section.settings.whoweare_text %}
+        <p>{{ section.settings.whoweare_text }}</p>
+      {% endif %}
+      {% if section.settings.whoweare_url and section.settings.whoweare_url_text %}
+        <a href="{{ section.settings.whoweare_url }}" class="link-regular">
+          {{ section.settings.whoweare_url_text }}
+          {% render 'icon-arrow-top-right' %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Who we are",
+  "settings": [
+    {
+      "type": "text",
+      "id": "whoweare_title",
+      "label": "Section title",
+      "default": "Who we are title"
+    },
+    {
+      "type": "text",
+      "id": "whoweare_text",
+      "label": "Section text",
+      "default": "Who we are text"
+    },
+    {
+      "type": "url",
+      "id": "whoweare_url",
+      "label": "Section url "
+    },
+    {
+      "type": "text",
+      "id": "whoweare_url_text",
+      "label": "Section button text "
+    }
+  ],
+  "presets": [
+    {
+      "name": "Who we are"
+    }
+  ]
+}
+{% endschema %}

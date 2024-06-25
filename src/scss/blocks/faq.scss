@@ -1,0 +1,133 @@
+section.faq{
+    padding: 100px 0;
+
+    h2{
+        font-family: "Inter";
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 60px;
+    }
+}
+
+.faq__wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.faq__item{
+    font-family: "Space";
+    display: flex;
+    padding: 50px 60px;
+    border-bottom: 1px solid var(--secondary-border-color);
+
+    &:last-child{
+        border: none;
+    }
+
+    span{
+        font-size: 50px;
+        margin-right: 30px;
+        margin-top: -10px;
+        color: var(--secondary-font-color);
+    }
+
+    .faq-item__body{
+        max-width: 80%;
+        opacity: 0;
+        max-height: 0;
+        margin-top: 0;
+        overflow: hidden;
+        transition: all 0.2s linear;
+    }
+
+   &[aria-expanded='true'] .faq-item__body{
+        margin-top: 30px;
+        opacity: 1;
+        max-height: 9em;
+        transition: all 0.2s linear;
+   }
+
+   .faq-item__btn{
+        background-color: var(--secondary);
+        color: var(--secondary-font-color);
+        min-width: 30px;
+        height: 30px;
+        border: 1px solid var(--secondary-border-color);
+        border-radius: 50%;
+    }   
+
+    .faq-item__btn svg{
+        transition: 0.2s;
+    }
+
+    &[aria-expanded='true'] .faq-item__btn svg{
+        transform: rotate(45deg);
+    }
+
+   &[aria-expanded='true'] .faq-item__btn{
+        background-color: var(--dark);
+    }
+
+    &[aria-expanded='true'] .faq-item__btn path{
+        fill: var(--light);
+    }
+}
+
+.faq__item-wrapper{
+    width: 100%;
+}
+
+.faq-item__header{
+    user-select: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 0 10px;
+    h3{
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .faq__item{
+        padding: 20px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    section.faq{
+        padding: 50px 0;
+    }
+
+    .faq__item{
+        .faq-item__header{
+            h3{
+                font-size: 18px;
+            }
+            
+        }
+
+        span{
+            font-size: 30px;
+        }
+    }
+}
+
+@media only screen and (max-width: 552px) {
+    .faq__item{
+        .faq-item__header{
+            h3{
+                font-size: 18px;
+            }
+            
+        }
+
+        span{
+            font-size: 24px;
+            margin-top: -2px;
+            margin-right: 15px;
+        }
+    }
+}

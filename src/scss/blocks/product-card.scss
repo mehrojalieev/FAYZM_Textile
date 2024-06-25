@@ -1,0 +1,67 @@
+.product-card{
+    min-height: 450px;
+
+    .product-card__image{
+        width: 100%;
+        position: relative;
+
+        img, .product-card__image--hover{
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1.5;
+            object-fit: cover;
+            transition: transform var(--transition-2);
+        }
+    }
+
+    .product-card__title{
+        font-family: "Inter";
+        font-size: 1.2rem;
+        font-weight: 100;
+        padding: 16px 0;
+    }
+
+    .product-card__tags{
+        display: flex;
+        position: absolute;
+        gap: 10px;
+        right: 10px;
+        top: 10px;
+        z-index: 3;
+    }
+
+    .product-card__tag{
+        font-family: "Inter";
+        padding: 5px 10px;
+        background-color: #f9f8f842;
+        font-size: 14px;
+
+        &[data-product-tag="hot"]{
+            background-color: #e10e0e;
+            color: #fff;
+        }
+
+        &[data-product-tag="new"]{
+            background-color: var(--dark);
+            color: #fff;
+        }
+    }
+}
+
+.product-card__image--hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+  }
+
+.product-card[data-has-hover-image="true"]:hover .product-card__image img:first-of-type {
+    opacity: 0;
+}
+  
+  .product-card[data-has-hover-image="true"]:hover .product-card__image--hover {
+    opacity: 1;
+}
+

@@ -1,0 +1,89 @@
+.difference__wrapper{
+    margin-top: 100px;
+    .difference__content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 34px;
+      
+      h2{
+        font-size: 50px;
+        font-family: "Syne";
+        font-weight: 800;
+        line-height: 60px;
+        text-align: center;
+      }
+  
+      p{
+        font-family: "Inter";
+        text-align: center;
+        font-style: italic;
+        font-size: 26px;
+        line-height: 40px;
+        letter-spacing: 1.68px;
+      }
+    }
+  
+    .difference__box{
+      margin-top: 50px;
+      video{
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 2 / 1.1;
+      }
+      img{
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+      }
+    }
+  }
+
+
+  @media only screen and (max-width: 992px) {
+    .difference__wrapper .difference__content h2{
+      font-size: 30px;
+    }
+
+    .difference__wrapper .difference__content p{
+      font-size: 20px;
+    }
+    
+    .difference__wrapper{
+      .difference__box{
+        img{
+          height: 350px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .difference__wrapper .difference__content h2{
+      font-size: 22px;
+    }
+
+    .difference__wrapper .difference__content p{
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .difference__wrapper{
+      margin-top: 50px;
+    }
+
+    .difference__wrapper{
+      .difference__box{
+        img{
+          height: 200px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 552px) {
+    .difference__wrapper .difference__content h2{
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }

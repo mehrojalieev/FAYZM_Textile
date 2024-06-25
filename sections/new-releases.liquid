@@ -1,0 +1,83 @@
+{%- render 'stylesheet', name: 'new-releases' -%}
+
+
+<div class="new-releases" id="new-releases" role="new-releases">
+    <div class="container">
+        <div class="new-releases__main" data-image-side="{{ section.settings.section_image_side }}">
+            <div class="new-releases__content">
+                {% if section.settings.new-releases_title %}
+                    <p>{{ section.settings.new-releases_title }}</p>
+                {% endif %}
+                {% if section.settings.new-released_link and section.settings.new-releases_link_left_url%}
+                    <a href="{{ section.settings.new-releases_link_left_url }}" class="link-regular">{{ section.settings.new-released_link }}{% render "icon-arrow-top-right" %}</a>
+                {% endif %}
+            </div>
+            <div class="new-releases__banner">
+                {% if section.settings.new-releases_image-right and section.settings.new-releases_text_inside %}
+                    {{ section.settings.new-releases_image-right | image_url: width: 684 | image_tag }}
+                    <p>{{ section.settings.new-releases_text_inside }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+
+{
+    "name": "New releases",
+    "settings": [
+        {
+            "type": "text",
+            "id" : "new-releases_title",
+            "label": "Section title",
+            "default": "KEEP THE STRENGTH"
+        },
+        {
+            "type": "text",
+            "id" : "new-released_link",
+            "label": "Section link",
+            "default": "admin"
+        },
+        {
+            "type": "url",
+            "id": "new-releases_link_left_url",
+            "label" : "Section link left"
+        },
+        {
+            "type": "image_picker",
+            "id": "new-releases_image-right",
+            "label": "Section image right"
+        },
+        {
+            "type": "text",
+            "id": "new-releases_text_inside",
+            "label": "Banner text",
+            "default": "New Releases"
+        },
+        {
+            "type" : "select",
+            "id" : "section_image_side",
+            "label" : "Choose the image side",
+            "options": [
+                {
+                    "label": "Left",
+                    "value": "left"
+                },
+                {
+                    "label": "Right",
+                    "value": "right"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "New releases"
+        }
+    ]
+}
+
+
+{% endschema %}

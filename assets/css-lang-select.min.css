@@ -1,0 +1,46 @@
+.lang_switcher {
+  position: relative;
+  margin-left: 16px;
+  padding: 10px;
+}
+
+.localeBtn {
+  opacity: 1;
+  background-color: transparent;
+  color: var(--light);
+  border: none;
+  text-transform: uppercase;
+}
+
+.lang-content {
+  position: absolute;
+  top: 99%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--light);
+  display: none;
+}
+
+#localeItem {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 10px;
+  color: var(--dark);
+  font-family: "Inter";
+}
+
+.lang_switcher:hover .lang-content {
+  display: block;
+}
+
+.pinned-navbar .localeBtn {
+  color: var(--dark) !important;
+}
+
+.pinned-navbar .lang-content {
+  background-color: var(--dark);
+}
+
+.pinned-navbar #localeItem {
+  color: var(--light) !important;
+}

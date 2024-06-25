@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "collection-list-banner": {
+      "type": "collection-list-banner"
+    },
+    "collection-list-grid" : {
+      "type" : "collection-list-grid"
+    }
+  },
+  "order": [
+    "collection-list-banner",
+    "collection-list-grid"
+  ]
+}

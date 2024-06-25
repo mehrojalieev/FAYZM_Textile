@@ -1,0 +1,85 @@
+.about-us {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 22px;
+  box-sizing: content-box;
+}
+
+.about-header h2 {
+  font-size: 36px;
+  font-family: "Syne";
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.about__wrapper {
+  display: flex;
+  gap: 0 32px;
+}
+.about__wrapper .content {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+.about__wrapper .content:first-child {
+  max-width: 65%;
+}
+.about__wrapper .content p {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -6%;
+  line-height: 32px;
+}
+.about__wrapper .content a {
+  font-family: "Space";
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.about__wrapper img {
+  height: 440px;
+  width: 100%;
+  object-position: top;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 992px) {
+  .about__wrapper .content p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .about__wrapper {
+    flex-direction: column;
+    gap: 50px 0;
+  }
+  .content {
+    max-width: 100% !important;
+  }
+  .content:first-of-type {
+    flex-direction: column-reverse;
+  }
+  .content:last-of-type img {
+    height: auto !important;
+    aspect-ratio: 1/1 !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about-header h2 {
+    font-size: 28px;
+  }
+  .about-us {
+    padding-inline: 0;
+  }
+  .content:first-child img {
+    height: 340px;
+    object-position: center;
+  }
+  .content:last-of-type img {
+    height: auto !important;
+    aspect-ratio: 1/0.8 !important;
+  }
+}

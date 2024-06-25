@@ -1,0 +1,101 @@
+{%- render 'stylesheet' name: 'collection-banner'- %}
+<section class="collection-banner" id="collection-banner">
+    <div class="collection-wrapper">
+      <div class="collection-header">
+        {% if section.settings.carousel_banner_subtitle %}
+          <p class="collection-subtitle">{{ section.settings.carousel_banner_subtitle }}</p>
+        {% endif %}
+        {% if section.settings.carousel_banner_title %}
+          <h2 class="collection-title">{{ section.settings.carousel_banner_title }}</h2>
+        {% endif %}
+
+        {% if section.settings.carousel_banner_description %}
+          <p class="collection-description">
+            {{ section.settings.carousel_banner_description }}
+          </p>
+        {% endif %}
+      </div>
+      <div class="collection-banner-wrapper">
+        {% if section.settings.banner_desktop %}
+          {{ section.settings.banner_desktop | image_url: width: 4000  | image_tag }}
+        {% endif %}
+        <div class="collection__action-card">
+          <div class="card__overlay"></div>
+          <div class="card__content">
+            {% if section.settings.carousel_banner_card_title %}
+              <h3 class="card-title">{{ section.settings.carousel_banner_card_title }}</h3>
+            {% endif %}
+            {% if section.settings.carousel_banner_card_text %}
+              <p class="card__info-text">{{ section.settings.carousel_banner_card_text }}</p>
+            {% endif %}
+  
+            {% if section.settings.card_url and section.settings.card_text  %}
+              <a class="link-regular action-link" href="{{ section.settings.card_url }}">
+                {{ section.settings.card_text }}
+                {% render 'icon-arrow-top-right' %}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+  </div>
+</section> 
+
+{% schema %}
+{
+  "name": "Collection banner",
+
+  "settings": [
+    {
+      "type": "text",
+      "id": "carousel_banner_subtitle",
+      "label": "Carousel banner subtitle",
+      "default": "Carousel banner subtitle"
+    },
+    {
+      "type": "text",
+      "id": "carousel_banner_title",
+      "label": "Carousel banner title",
+      "default": "Carousel banner title"
+    },
+    {
+      "type": "text",
+      "id": "carousel_banner_description",
+      "label": "Carousel banner description",
+      "default": "Carousel banner description"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_desktop",
+      "label": "Banner desktop"
+    },
+    {
+      "type": "text",
+      "id": "carousel_banner_card_title",
+      "label": "Carousel banner card title",
+      "default": "Carousel banner card title"
+    },
+    {
+      "type": "text",
+      "id": "carousel_banner_card_text",
+      "label": "Carousel banner made",
+      "default": "Carousel banner made"
+    },
+    {
+      "type": "text",
+      "id": "card_text",
+      "label": "Collection card text"
+    },
+    {
+      "type": "url",
+      "id": "card_url",
+      "label": "Collection card url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection banner"
+    }
+  ]
+}
+{% endschema %}

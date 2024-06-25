@@ -1,0 +1,66 @@
+{%- render 'stylesheet', name: 'whatwedo' -%}
+
+
+<section  id="whatwe-do" class="whatwe-do">
+    <div class="container">
+        <div class="whatwe-do--box">
+           {% if section.settings.whatwedo_title %}
+                <h2>{{section.settings.whatwedo_title}}</h2>
+           {% endif %}
+            <div class="whatwe-do--content" >
+                {% if section.settings.whatwedo_text %}
+                    <p>{{ section.settings.whatwedo_text }}</p>
+                {% endif %}
+                {% if section.settings.whatwedo_btn and section.settings.whatwedo_link  %}
+                <a href="{{ section.settings.whatwedo_link }}" class="link-regular"> 
+                    <span>{{ section.settings.whatwedo_btn }}</span>
+                    {% render "icon-arrow-top-right" %}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "What we do",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "sow_whatwe_do",
+            "label": "Show What we do",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id" : "whatwedo_title",
+            "label": "What we do title",
+            "default": "MULTI-SECTOR TEXTILE COMPANY"
+        },
+        {
+            "type": "text",
+            "id": "whatwedo_text",
+            "label": "What we do text",
+            "default": "How we work: Seed production, raw cotton production, cotton processing, oil production, flour production, cotton spinning, fabric production, ready-made knitwear and animal husbandry."
+        },
+        {
+            "type": "text",
+            "id": "whatwedo_btn",
+            "label": "What we do button text",
+            "default": "BETTER KNOW US"
+        },
+        {
+            "type": "url",
+            "id" : "whatwedo_link",
+            "label": "What we do button link"
+        }
+    ],
+    "presets": [
+        {
+            "name": "What we do"
+        }
+    ]
+}
+{% endschema %}
+

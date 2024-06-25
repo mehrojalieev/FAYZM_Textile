@@ -1,0 +1,93 @@
+{%- render 'stylesheet', name: 'product-card' -%}
+{%- render 'stylesheet', name: 'search' -%}
+{%- render 'stylesheet', name: 'product-grid' -%}
+
+
+
+<form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
+  <input name="options[prefix]" type="hidden" value="last">
+  <div class="container">
+      <form action="{{ routes.search_url }}" method="get" role="search">
+        <div class="predictive-search">
+          <label for="HeaderSearch">SEARCH: </label>
+          <br>
+          <div class="predictive-search-input-wrapper">
+            <input
+              type="text"
+              id="HeaderSearch"
+              name="q"
+              value="{{ search.terms | escape }}"
+              placeholder="Search"
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="predictive-search-results"
+              aria-controls="predictive-search-results"
+              aria-haspopup="listbox"
+              aria-autocomplete="list"
+              autocorrect="off"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+            >
+            <div class="predictive-search-loading"><span class="loader"></span></div>
+            <button
+            type="reset"
+            class="{% if search.terms == blank %} hidden{% endif %}"
+            aria-label="Clear"
+          >
+            Clear
+          </button>
+          <button type="submit" aria-label="Search">Search</button>
+          </div>
+
+          <input type="hidden" name="options[prefix]" value="last">
+        </div>
+
+        <div
+          tabindex="-1"
+          data-predictive-search-results
+          class="predictive-search-results predictive-search-dropdown"
+        ></div>
+      </form>
+  </div>
+</form>
+
+{%- if search.performed -%}
+    <div data-facets-form-content="product-list">
+        {%- if search.results.size == 0 and search.filters != empty -%}
+            <p role="status">
+                Results: {{ search.results_count }}
+            </p>
+        {%- else -%}
+            <main class="product-grid-section">
+                <div class="container">
+                    <h2 class="product-grid-section__title">Search results for “{{ search.terms | escape }}”</h2>
+                    {%- paginate search.results by 6 -%}
+                        <component-loader>
+                            <div class="product-grid">
+                                {%- for item in search.results -%}
+                                    {%- case item.object_type -%}
+                                    {%- when 'product' -%}
+                                            {%- render 'product-card', product_card: item, no_css: true -%}
+                                    {%- when 'page' -%}
+                                        <div>
+                                            <a href="{{ item.url }}">{{ item.title | escape }}</a>
+                                        </div>
+                                        <div>{{ item.content | strip_html | truncatewords: 30 }}</div>
+                                    {%- endcase -%}
+                                {%- endfor -%}
+                            </div>
+                        </component-loader>
+                        {% render 'pagination', paginate: paginate %}
+                    {%- endpaginate -%}
+                </div>
+            </main>
+        {%- endif -%}
+    </div>
+    {% else %}
+        <div class="container">
+            <h2 class="product-grid-section__title">
+                Search products...
+            </h2>
+        </div>
+{%- endif -%}

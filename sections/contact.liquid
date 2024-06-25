@@ -1,0 +1,55 @@
+{%- render 'stylesheet', name: 'contact' -%}
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2>Contact information</h2>
+        <div class="contact__items">
+            {% if section.blocks.size > 0 %}
+                {% for contact_item in section.blocks %}
+                    <div class="contact__item">
+                        <p>{{ contact_item.settings.contact_type | append: ':' }}</p>
+                        <div class="contact__item-body">
+                            {{ contact_item.settings.contact_content }}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    {% if section.settings.contact_map != blank %}
+        <div>
+            {{ section.settings.contact_map }}
+        </div>
+    {% endif %}
+</section>
+
+{% schema %}
+    {
+        "name" : "Contact",
+        "blocks": [
+            {
+                "name": "Contact item",
+                "type": "contact_item",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id" : "contact_type",
+                        "label": "Enter contact type"
+                    },
+                    {
+                        "type": "richtext",
+                        "id" : "contact_content",
+                        "label": "Enter contact content"
+                    }
+                ]
+            }
+        ],
+        "settings": [
+            {
+                "type": "html",
+                "id" : "contact_map",
+                "label": "Contact map" 
+            }
+        ]
+    }
+{% endschema %}

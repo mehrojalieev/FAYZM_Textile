@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "banner_iF9GQE": {
+      "type": "banner",
+      "settings": {
+        "banner_poster": "shopify:\/\/shop_images\/4K3A3243_1_2_1.png",
+        "banner_image_or_video": true,
+        "banner_text": "about fayz-m"
+      }
+    },
+    "whoweare_De3W8z": {
+      "type": "whoweare",
+      "settings": {
+        "whoweare_title": "WHO WE ARE | MULTI-SECTOR TEXTILE COMPANY",
+        "whoweare_text": "Transforming Fibers into Fashion: Weaving Quality, Innovation, and Elegance Together.",
+        "whoweare_url": "shopify:\/\/collections",
+        "whoweare_url_text": "about our businesses"
+      }
+    },
+    "whatweachieved_weLCkg": {
+      "type": "whatweachieved",
+      "blocks": {
+        "section_item_RcC9qd": {
+          "type": "section_item",
+          "settings": {
+            "achivement_image": "shopify:\/\/shop_images\/icon-cloth.svg",
+            "achivement_number": "6",
+            "achivement_number_text": "mln+",
+            "achivement_text": "products"
+          }
+        },
+        "section_item_xLLbGH": {
+          "type": "section_item",
+          "settings": {
+            "achivement_image": "shopify:\/\/shop_images\/icon-people.svg",
+            "achivement_number": "1500",
+            "achivement_number_text": "+",
+            "achivement_text": "jobs"
+          }
+        },
+        "section_item_zekNCf": {
+          "type": "section_item",
+          "settings": {
+            "achivement_image": "shopify:\/\/shop_images\/icon-handshake.svg",
+            "achivement_number": "20",
+            "achivement_number_text": "+",
+            "achivement_text": "partners"
+          }
+        },
+        "section_item_KkeXiq": {
+          "type": "section_item",
+          "settings": {
+            "achivement_image": "shopify:\/\/shop_images\/icon-energy.svg",
+            "achivement_number": "950",
+            "achivement_number_text": "kw+",
+            "achivement_text": "green energy"
+          }
+        }
+      },
+      "block_order": [
+        "section_item_RcC9qd",
+        "section_item_xLLbGH",
+        "section_item_zekNCf",
+        "section_item_KkeXiq"
+      ],
+      "settings": {
+      }
+    },
+    "about_history_b4qTTP": {
+      "type": "about-history",
+      "settings": {
+        "about_history_title": "OUR HISTORY",
+        "about_history_top_text": "The private enterprise XO`JAOBOD FAYZ-M was founded in 2005 in the village of Birlashgan, Khojaabad district, Andijan region of the Republic of Uzbekistan. The brand specializes in the production and sale of knitwear, using environmentally friendly raw materials of its own production. Products here go from deep processing of cotton fiber to the production of finished garments.",
+        "about_history_bottom_text": "XO`JAOBOD FAYZ-M products are based on the purest selected cotton grown in the fields of sunny Uzbekistan. The republic has been developing independently for 25 years, and for 11 of them XO`JAOBOD FAYZ-M has been successfully sewing comfortable, soft and environmentally friendly clothes. The manufacturer notes that the country's authorities take great care of entrepreneurs, and is convinced: “We must work in such a way as to justify the trust of our government.” Today the brand has achieved great success in the market and worthily celebrates the 25th anniversary of the independence of its fatherland."
+      }
+    },
+    "feature_gCV8Az": {
+      "type": "feature",
+      "settings": {
+        "banner_title": "OUR PERSPECTIVE",
+        "banner_text": "Dynamically developing and mastering new technologies for the production of linens and knitwear, the XO`JAOBOD FAYZ-M brand has firmly established itself in its segment. Today, the company supplies up to 20% of its products to the domestic market and up to 80% to the CIS countries: Russia, Ukraine, Kazakhstan, Kyrgyzstan, Turkmenistan. In 2014–2016, export contracts were concluded totaling more than five million US dollars. In the future, the company plans to expand and increase the number of jobs, as it intends to export yarn and linen to Asian and Western countries.",
+        "banner_image": "shopify:\/\/shop_images\/356A1263_1_1.jpg"
+      }
+    }
+  },
+  "order": [
+    "banner_iF9GQE",
+    "whoweare_De3W8z",
+    "whatweachieved_weLCkg",
+    "about_history_b4qTTP",
+    "feature_gCV8Az"
+  ]
+}

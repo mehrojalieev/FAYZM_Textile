@@ -1,0 +1,67 @@
+{%- render 'stylesheet', name: 'feature' -%}
+
+<section id='difference-dna' class="difference__wrapper">
+  <div class="container">
+    <div class="difference__content">
+      {% if section.settings.banner_title %}
+        <h2>{{ section.settings.banner_title }}</h2>
+      {% endif %}
+      {% if section.settings.banner_text %}
+        <p>{{ section.settings.banner_text }}</p>
+      {% endif %}
+    </div>
+    <div class="difference__box">
+      {% if section.settings.banner_video != blank %}
+         <video
+        class="difference-banner__bg-video"
+        crossorigin="anonymous"
+        autoplay
+        playsinline
+        muted
+        loop
+        preload="none"
+        poster="{{ section.settings.banner_image |  image_url: width: 4000 }}"
+        type="video/mp4"
+        src="{{ section.settings.banner_video.sources[1].url }}"></video>
+      {% endif %}
+      {% if section.settings.banner_image %}
+        {{ section.settings.banner_image | image_url: width: 4000  | image_tag: class: 'difference-banner__bg' }}
+      {% endif %}
+      </div>
+      </div>
+</section>
+
+{% schema %}
+{
+  "name": "Features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Difference banner title",
+      "default": "Difference banner title"
+    },
+    {
+      "type": "text",
+      "id": "banner_text",
+      "label": "Difference banner text",
+      "default": "Difference banner text"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner image"
+    },
+    {
+      "type": "video",
+      "id" : "banner_video",
+      "label" : "Banner video"
+    }
+  ],
+  "presets": [
+    {
+        "name": "Feature"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+{%- render 'stylesheet', name: 'announcement-bar' -%}
+
+{% if section.settings.announcement_bar_show %}
+    <section data-color-scheme="{{ section.settings.announcement_bar_color_select }}" id="announcement-bar" class="announcement-bar" role="alert">
+        <div class="container">
+            <div class="announcement-bar__wrapper">{{ section.settings.announcement_bar_content }}</div>
+        </div>
+    </section>
+{% endif %}
+
+{% schema %}
+    {
+    "name": "Announcement bar",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "announcement_bar_content",
+            "label": "Announcement bar content",
+            "default": "<p>Announcement bar content</p>"
+        },
+        {
+            "type": "checkbox",
+            "id": "announcement_bar_show",
+            "label": "Show announcement bar",
+            "default": true
+        },
+        {
+            "type" : "select",
+            "id" : "announcement_bar_color_select",
+            "label" : "Color scheme",
+            "default": "light",
+            "options": [
+                {
+                    "label": "Light",
+                    "value": "light"
+                },
+                {
+                    "label": "Dark",
+                    "value": "dark"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Announcement bar"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,168 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "FAYZ-M",
+    "theme_version": "1.0",
+    "theme_author": "The Binary Inc.",
+    "theme_documentation_url": "https:\/\/github.com\/REACT-DEVELOPER-IBROKHIM\/fayz-m.git",
+    "theme_support_email": "ij.ibrokhim.jalalov@gmail.com"
+  },
+  {
+    "name": "General",
+    "settings": [
+      {
+        "type": "html",
+        "id": "logo_light_bg_svg",
+        "label": "Logo black (for light BG) (SVG)"
+      },
+      {
+        "type": "html",
+        "id": "logo_dark_bg_svg",
+        "label": "Logo white (for dark BG) (SVG)"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_light_bg",
+        "label": "Logo black (for light BG)"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_dark_bg",
+        "label": "Logo white (for dark BG)"
+      },
+      {
+        "type": "link_list",
+        "id": "sidebar_menu",
+        "label": "Sidebar menu which will appear in pages"
+      }
+    ]
+  },
+  {
+    "name": "Visual",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_1",
+        "label": "Color 1"
+      },
+      {
+        "type": "color",
+        "id": "color_2",
+        "label": "Color 2"
+      },
+      {
+        "type": "color",
+        "id": "color_3",
+        "label": "Color 3"
+      },
+      {
+        "type": "color",
+        "id": "color_4",
+        "label": "Color 4"
+      },
+      {
+        "type": "color",
+        "id": "color_5",
+        "label": "Color 5"
+      },
+      {
+        "type": "color",
+        "id": "color_error",
+        "label": "Color error"
+      },
+      {
+        "type": "color",
+        "id": "color_success",
+        "label": "Color success"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "cart_checkout_agreement",
+        "label": "Checkout agreement",
+        "default": "<p>Click here to acknowledge you have read and understood the <a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">return policy<\/a>. All private sale items are final sale. No returns or exchanges.<\/p>"
+      },
+      {
+        "type": "header",
+        "content": "Empty state"
+      },
+      {
+        "type": "text",
+        "id": "cart_empty_message",
+        "label": "Message",
+        "default": "Your bag is currently empty."
+      },
+      {
+        "type": "text",
+        "id": "cart_empty_button_label",
+        "label": "Button label",
+        "default": "Continue shopping"
+      },
+      {
+        "type": "url",
+        "id": "cart_empty_button_url",
+        "label": "Button link"
+      }
+    ]
+  },
+  {
+    "name": "Klaviyo settings",
+    "settings": [
+      {
+        "id": "klaviyo_id",
+        "type": "text",
+        "label": "Klaviyo ID"
+      },
+      {
+        "type": "html",
+        "id": "klaviyo_newsletter_email_code",
+        "label": "Newsletter form html code"
+      },
+      {
+        "type": "html",
+        "id": "klaviyo_coming_soon_email_code",
+        "label": "Coming soon form html code"
+      }
+    ]
+  },
+  {
+    "name": "Account",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "form_image",
+        "label": "Form image"
+      },
+      {
+        "type": "image_picker",
+        "id": "account_banner",
+        "label": "Account banner image"
+      },
+      {
+        "type": "text",
+        "id": "vip_instruction_one",
+        "label": "Vip text"
+      },
+      {
+        "type": "text",
+        "id": "vip_instruction_two",
+        "label": "Vip text"
+      }
+    ]
+  },
+  {
+    "name": "Order status",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "checkout_pre_order_html",
+        "label": "Checkout pre order note",
+        "default": "<p>Please note that one or more of your items is a pre-order. You’ll get shipping and delivery updates when it’s ready Check out our Shipping Policy and Return Policy for more information.<\/p>"
+      }
+    ]
+  }
+]

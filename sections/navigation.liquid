@@ -1,0 +1,140 @@
+{%- render 'stylesheet', name: 'navigation' -%}
+{%- render 'tag-script', name: 'navigation', loading: 'defer' -%}
+
+<nav id="navigation" class="navigation" role="navigation" {% if template.name contains 'collection' or template.name contains 'product' or template.suffix contains 'business' or template.name contains 'search'  %} data-color-scheme="dark" {% endif %}>
+    <div class="container">
+        <div class="navigation__wrapper" role="img">
+            <button class="navigation__toggle">
+                {% render 'icon-burger' %}
+            </button>
+            <a class="navigation__logo" href={{ '/' }}>
+                <div data-logo-type="desktop">
+                    {% if section.settings.navigation_logo_light %}
+                        {{section.settings.navigation_logo_light | image_url: width: 100 | image_tag: alt: section.settings.navigation_logo_alt_text }} 
+                    {% endif %}
+                    {% if section.settings.navigation_logo_dark %}
+                        {{section.settings.navigation_logo_dark | image_url: width: 100 | image_tag: alt: section.settings.navigation_logo_alt_text }} 
+                    {% endif %}
+                </div>
+                <div data-logo-type="mobile">
+                    {% if section.settings.navigation_logo_mobile_light %}
+                        {{section.settings.navigation_logo_mobile_light | image_url: width: 100 | image_tag: alt: section.settings.navigation_logo_alt_text }} 
+                    {% endif %}
+                    {% if section.settings.navigation_logo_mobile_dark %}
+                        {{section.settings.navigation_logo_mobile_dark | image_url: width: 100 | image_tag: alt: section.settings.navigation_logo_mobile_light }} 
+                    {% endif %}
+                </div>
+                <h1 class="visually-hidden">{{ section.settings.navigation_logo_placeholder_text }}</h1>
+            </a>
+            <div role="list" class="navigation__menu">
+            <button class="navigation__close">
+                {% render 'icon-close' %}
+            </button>
+            {% for link in linklists['main-menu'].links %}
+                <div role="listitem" class="menu-item">
+                    <a role="link" class="menu-item__link" href="{{ link.url }}">{{ link.title | upcase }} 
+                    {% if link.links != blank %}
+                            {% render 'chevron-down' %}
+                    {% endif %}</a>
+                    {%- if link.links != blank -%}
+                        <div class="submenu-wrapper">
+                            <div class="container">
+                            <ul class="submenu">
+                                {%- for child_link in link.links -%}
+                                    <li role="listitem" class="submenu-item">
+                                        <a role="link" class="submenu-item__link" href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
+                                            {{ child_link.title }}
+                                        </a>
+                                    </li>
+                                {%- endfor -%}
+                                </ul>
+                            </div>
+                        </div>
+                    {%- endif -%}
+                </div>
+            {% endfor %}
+            <div class="navigation__address">
+                {% if section.settings.store_phone_number %}
+                    <a href="tel:{{ section.settings.store_phone_number }}">{{ section.settings.store_phone_number }}</a>
+                {% endif %}
+                {% if section.settings.navigation_starting_hours and section.settings.navigation_ending_hours %}
+                    <div class="business-hours">
+                        <span>{{ 'nav.working_hours' | t }} {{section.settings.navigation_starting_hours}} - {{section.settings.navigation_ending_hours}}</span>
+                    </div>
+                {% endif %}
+            </div>  
+            </div>
+            <div class="navigation__info">
+                <div class="navigation__address">
+                    {% if section.settings.store_phone_number %}
+                        <a href="tel:{{ section.settings.store_phone_number }}">{{ section.settings.store_phone_number }}</a>
+                    {% endif %}
+                    {% if section.settings.navigation_starting_hours and section.settings.navigation_ending_hours %}
+                        <div class="business-hours">
+                            <span>{{ 'nav.working_hours' | t }} {{section.settings.navigation_starting_hours}} - {{section.settings.navigation_ending_hours}}</span>
+                        </div>
+                    {% endif %}
+                </div>  
+                {% render 'lang-select' %}
+            </div>
+        </div>
+    </div>
+</nav> 
+
+{% schema %}
+{
+  "name": "Navigation",
+  "settings": [
+    {
+        "type" : "text",
+        "id": "navigation_logo_placeholder_text",
+        "label": "Navigation logo placeholder SEO"
+    },
+    {
+        "type": "image_picker",
+        "id": "navigation_logo_dark",
+        "label": "Navigation logo dark"
+    },
+    {
+        "type": "image_picker",
+        "id": "navigation_logo_light",
+        "label": "Navigation logo light"
+    },
+    {
+        "type": "image_picker",
+        "id": "navigation_logo_mobile_dark",
+        "label": "Navigation mobile logo dark"
+    },
+    {
+        "type": "image_picker",
+        "id": "navigation_logo_mobile_light",
+        "label": "Navigation mobile logo light"
+    },
+    {
+        "type" : "text",
+        "id": "navigation_logo_alt_text",
+        "label": "Navigation logo description"
+    },
+    {
+        "type": "text",
+        "id": "store_phone_number",
+        "label": "Store phone number"
+    },
+    {
+        "type": "text",
+        "id" : "navigation_starting_hours",
+        "label": "Store starting hours"
+    },
+    {
+        "type": "text",
+        "id" : "navigation_ending_hours",
+        "label": "Store ending hours"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Navigation"
+    }
+  ]
+}
+{% endschema %}

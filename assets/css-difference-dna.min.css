@@ -1,0 +1,37 @@
+.difference__wrapper {
+  margin-top: 100px;
+}
+.difference__wrapper .difference__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 34px;
+}
+.difference__wrapper .difference__content h2 {
+  font-size: 50px;
+  font-family: "Syne";
+  font-weight: 800;
+  line-height: 60px;
+  text-align: center;
+}
+.difference__wrapper .difference__content p {
+  font-family: "Inter";
+  text-align: center;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 40px;
+  letter-spacing: 1.68px;
+}
+.difference__wrapper .difference__box {
+  margin-top: 50px;
+}
+.difference__wrapper .difference__box video {
+  width: 100%;
+  object-fit: cover;
+  height: 500px;
+}
+.difference__wrapper .difference__box img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}

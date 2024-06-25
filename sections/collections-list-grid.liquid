@@ -1,0 +1,39 @@
+{%- render 'stylesheet' name: 'collection-list-grid'- %}
+
+<main class="collection-grid">
+    <div class="container">
+        <h2 class="collection-grid__title">All collections</h2>
+        <section class="collections-list-grid">
+            {% for collection in section.settings.section_list %}
+                    <div class="grid__list-item" >
+                        <a href="{{ collection.url}}">
+                            {{ collection.featured_image | image_url: width: 1400  | image_tag }}
+                        </a>
+                        <h3>{{ collection.title }}</h3>
+                        <a class="link-regular" href="{{ collection.url}}">
+                            Explore
+                            {% render 'icon-arrow-top-right'  %}
+                        </a>
+                    </div>
+            {% endfor %}
+        </section>
+    </div>
+</main>
+
+{% schema %}
+    {
+        "name": "Collection list grid", 
+        "settings": [
+            {
+                "type": "collection_list",
+                "id": "section_list",
+                "label": "Collections list"
+            }
+        ],
+        "presets": [
+            {
+            "name": "Collection list grid"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,48 @@
+{%- render 'stylesheet', name: 'about-history' -%}
+
+<section class="about-history" id="about-history">
+  <div class="container">
+    <div class="about__history-content">
+        {% if section.settings.about_history_title %}
+      <h2 class="history-title">{{ section.settings.about_history_title }}</h2>
+      {% endif %}
+      {% if section.settings.about_history_top_text %}
+        <p>{{ section.settings.about_history_top_text }}</p>
+        {% endif %}
+      {% if section.settings.about_history_bottom_text %}
+        <p class="content__bottom-text">{{ section.settings.about_history_bottom_text }}</p>
+        {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About history",
+  "settings": [
+    {
+      "type": "text",
+      "id": "about_history_title",
+      "label": "About history title",
+      "default": "About history title"
+    },
+    {
+      "type": "text",
+      "id": "about_history_top_text",
+      "label": "About history top text",
+      "default": "About history top text"
+    },
+    {
+      "type": "text",
+      "id": "about_history_bottom_text",
+      "label": "About history bottom text",
+      "default": "About history bottom text"
+    }
+  ],
+  "presets": [
+    {
+        "name": "About history"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+{%  render 'stylesheet', name: 'product-image-gallery' %}
+
+<div class="product-image-gallery">
+    {% for image in product.images %}
+       <div class="product-image-gallery__image">
+        {{ image |  image_url: width: 4000 |  image_tag   }}
+       </div>
+    {% endfor %}
+</div>

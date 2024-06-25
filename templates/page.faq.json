@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "banner_FPnG7w": {
+      "type": "banner",
+      "settings": {
+        "banner_poster": "shopify:\/\/shop_images\/4K3A3243_1_3.png",
+        "banner_image_or_video": true,
+        "banner_text": "faq fayz-m"
+      }
+    },
+    "faq_g3mE74": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_DkRCFE": {
+          "type": "faq_item",
+          "settings": {
+            "faq_title": " Zakaz berishning minimalniy miqdori qancha?",
+            "faq_text": "Minimalniy partiya bitta rang va bitta model uchun 3000 dona. Kamroq bo’lsa ham qilib berishimiz mumkin unda narx ko’tariladi."
+          }
+        },
+        "faq_item_z6AmRx": {
+          "type": "faq_item",
+          "settings": {
+            "faq_title": "To’lov usullari qanday bajariladi?",
+            "faq_text": "Klient zakaz bergandan keyin oldindan 30% to’lov qiladi va zakaz tayyorlash boshlanadi. Mahsulot tayyor bo’lgandan keyin 70% to’lov qiladi va olib chiqib ketishi mumkin."
+          }
+        },
+        "faq_item_wnqXjf": {
+          "type": "faq_item",
+          "settings": {
+            "faq_title": "O’zimizning brend bilan ham mahsulot tayyorlab bera olasizlarmi?",
+            "faq_text": "Xa albatta tayyorlab beramiz"
+          }
+        },
+        "faq_item_Ki4D4y": {
+          "type": "faq_item",
+          "settings": {
+            "faq_title": "To’lov amalga oshirilgandan so’ng, mahsulot tayyor bo’lishi davomiyligi qancha?",
+            "faq_text": "To’lov amalga oshirilgandan so’ng o’rtacha 2-2.5 oy mobaynida klient zakazi tayyor bo’ladi. Undan ham ertaroq qilish imkoni bor buni alohida suhbat orqali ma’lum qilamiz."
+          }
+        },
+        "faq_item_EnpjPJ": {
+          "type": "faq_item",
+          "settings": {
+            "faq_title": "Zakaz olish jarayoni va zakaz tayyorlanayotkan jarayonda kim bilan aloqada turamiz?",
+            "faq_text": "Zakaz olinishidan oldin sizga tayyorlanadigan mahsulot uchun maxsus namuna tayyorlanib sizning roziligingiz olinadi va sizga 1ta sotuv meneger bog’lanib beriladi. Siz bilan har kuni aloqada turadi va sizning har qanday savollaringizga javob beradi, zakazingiz bo’yincha kunlik ma’lumotlarini yetkazadi."
+          }
+        },
+        "faq_item_kHaKjY": {
+          "type": "faq_item",
+          "settings": {
+            "faq_title": "O’zingiz individual dizayn ham tayyorlab bera olasizmi?",
+            "faq_text": "Xa albatta. Agar sizga dizayn kerak bo’lsa tayyorlab beramiz va shu dizaynni faqat siz uchun ishlab chiqarish bo’yicha shartnoma qilishimiz mumkin."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_DkRCFE",
+        "faq_item_z6AmRx",
+        "faq_item_wnqXjf",
+        "faq_item_Ki4D4y",
+        "faq_item_EnpjPJ",
+        "faq_item_kHaKjY"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner_FPnG7w",
+    "faq_g3mE74"
+  ]
+}

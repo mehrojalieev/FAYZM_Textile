@@ -1,0 +1,40 @@
+{%- render 'stylesheet', name: 'clothes-collection' -%}
+
+<section id='clothes-collection' class="clothes__collection-banner">
+    {% if section.settings.clothes_collection_banner_title != blank %}
+        <h2> {{ section.settings.clothes_collection_banner_title  }} </h2>
+    {% endif %}
+    {% if section.settings.collection_link and section.settings.clothes_collection_btn %}
+        <a href="{{ section.settings.collection_link }}" class="link-regular link-regular--light">{{ section.settings.clothes_collection_btn }} {% render 'icon-arrow-top-right' %} </a>
+    {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Clothes collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "clothes_collection_banner_title",
+      "label": "Colothes collection banner title",
+      "default": "Colothes collection banner title"
+    },
+    {
+      "type": "text",
+      "id": "clothes_collection_btn",
+      "label": "Clothes collection button text",
+      "default": "Know more"
+    },
+    {
+      "type": "url",
+      "id" : "collection_link",
+      "label": "Clothes collection button link"
+    }
+  ],
+  "presets": [
+    {
+        "name": "Clothes collection"
+    }
+  ]
+}
+{% endschema %}

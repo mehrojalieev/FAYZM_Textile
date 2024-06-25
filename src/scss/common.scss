@@ -1,0 +1,84 @@
+@import "fonts";
+@import "variables";
+@import "./blocks/partners.scss";
+@import "./blocks/whoweare.scss";
+@import "./blocks/whatweachieved.scss";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul:not(.product-section__content ul){
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.no-scroll{
+    overflow: hidden;
+    position: relative;
+}
+
+.container{
+    max-width: 1240px;
+    padding: 0 22px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.visually-hidden{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.link-regular{
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 12px 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: "Space";
+    svg{
+        margin-left: 10px;
+    }
+
+    &--light{
+        background-color: var(--light);
+        color: var(--dark);
+        svg path{
+            stroke: var(--dark);
+        }
+    }
+}
+
+[data-color-scheme="light"]{
+    background-color: var(--light);
+    color: var(--dark) !important;
+}
+
+[data-color-scheme="dark"]{
+    background-color: var(--dark);
+    color: var(--light) !important;
+}
+
+#preview-bar-iframe{
+    display: none !important;
+}
+
+@media only screen and (max-width: 552px){
+    .link-regular{
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+}

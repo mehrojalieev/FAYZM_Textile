@@ -1,0 +1,67 @@
+{%- render 'stylesheet', name: 'banner' -%}
+{%- render 'tag-script', name: 'banner', loading: 'defer' -%}
+
+{% if section.settings.banner_video or section.settings.banner_poster %}
+    <section class="banner" id="banner" role="banner">
+        {% if section.settings.banner_video != blank and section.settings.banner_image_or_video == false %}
+            <video
+            class="hero-banner__bg-video"
+            crossorigin="anonymous"
+            autoplay
+            playsinline
+            muted
+            loop
+            preload="none"
+            poster="{{ section.settings.banner_poster |  image_url: width: 1400 }}"
+            type="video/mp4"
+            src="{{ section.settings.banner_video.sources[1].url }}"></video>
+            <button data-video-muted="true" id="video-controller" class="hero-video-controller">
+                {%- render 'icon-volume' -%}
+                {%- render 'icon-novolume' -%}
+            </button>
+        {% endif %}
+        {% if section.settings.banner_image_or_video and section.settings.banner_poster %}
+            {% if section.settings.banner_text != blank %}
+                <div class="hero-banner__overlay">
+                   <div class="container">
+                        <h1 {% if template.suffix contains 'faq' %} class="smaller-title" {% endif %}>{{ section.settings.banner_text }}</h1>
+                   </div>
+                </div>
+            {% endif %}
+            {{ section.settings.banner_poster |  image_url: width: 1400 |  image_tag   }}
+        {% endif %}
+    </section>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Banner",
+    "settings": [
+        {
+            "type": "video",
+            "id" : "banner_video",
+            "label" : "Banner video"
+        },
+        {
+            "type": "image_picker",
+            "id" : "banner_poster",
+            "label" : "Banner poster image"
+        },
+        {
+            "type": "checkbox",
+            "id" : "banner_image_or_video",
+            "label" : "Banner no video"
+        },
+        {
+            "type": "text",
+            "id" : "banner_text",
+            "label" : "Banner text"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banner"
+        }
+    ]
+}
+{% endschema %}

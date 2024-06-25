@@ -1,0 +1,130 @@
+.collection-grid{
+    margin: 100px 0;
+}
+
+.collection-grid__title{
+    margin: 40px 0;
+    font-size: 2.4rem;
+    font-family: "Space";
+}
+
+.grid__list-item{
+    text-decoration: none;
+    color: var(--dark);
+    text-transform: uppercase;
+    padding: 20px;
+    border: 1px solid var(--light-border-color);
+
+    h3{
+        font-family: "Inter";
+        font-weight: 900;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+.grid__list-item:first-child{
+    grid-area: main-1;
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.grid__list-item:first-child img{
+    height: calc(100% - 115px);
+}
+
+.grid__list-item img:not(.grid__list-item:first-child img){
+    aspect-ratio: 1 / 1;
+    height: 500px;  
+}
+
+.grid__list-item:nth-child(2){
+    grid-area: secondary-1;
+}
+
+
+.grid__list-item:nth-child(3){
+    grid-area: secondary-2;
+}
+
+.grid__list-item:nth-child(4){
+    grid-area: secondary-3;
+}
+
+.grid__list-item:nth-child(5){
+    grid-area: secondary-4;
+}
+
+.grid__list-item:nth-child(6){
+    grid-area: secondary-5;
+}
+
+.grid__list-item:nth-child(7){
+    grid-area: secondary-6;
+}
+
+.grid__list-item{
+    background: #fff !important;
+}
+
+.collections-list-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+        "main-1 main-1 main-1  secondary-1 secondary-1"
+        "main-1 main-1 main-1  secondary-2 secondary-2"
+        "main-1 main-1 main-1  secondary-3 secondary-3"
+        "secondary-4 secondary-4 secondary-5 secondary-6 secondary-6"
+    ;
+
+    gap: 20px;
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .collections-list-grid{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "main-1 main-1 main-1 main-1"
+        "main-1 main-1 main-1 main-1"
+        "secondary-1 secondary-1 secondary-2 secondary-2"
+        "secondary-3 secondary-3 secondary-3 secondary-3"
+        "secondary-5 secondary-5 secondary-6 secondary-6"
+    ;
+    }
+
+    .grid__list-item img:not(.grid__list-item:first-child img){
+        aspect-ratio: 1 / 1.5;
+        height: 600px;  
+    }
+}
+
+@media only screen and (max-width: 552px) {
+    .grid__list-item img:not(.grid__list-item:first-child img){
+        aspect-ratio: 1 / 1;
+        height: 400px;  
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .collections-list-grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "main-1 main-1"
+        "main-1 main-1"
+        "secondary-1 secondary-1"
+        "secondary-2 secondary-2"
+        "secondary-3 secondary-3"
+        "secondary-4 secondary-4"
+        "secondary-5 secondary-5"
+        "secondary-6 secondary-6"
+    ;
+    }
+}

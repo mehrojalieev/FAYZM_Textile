@@ -1,0 +1,21 @@
+{%- render 'stylesheet', name: 'lang-select' -%}
+
+{% form 'localization', id: 'localization_form', class: 'lang_switcher' %}
+    <button class="localeBtn" disabled> {{ form.current_locale.endonym_name }}</button>
+    <div class="lang-content">
+        {% for locale in shop.published_locales %}
+            <a href="#" id="localeItem" lang="{{ locale.iso_code }}">{{ locale.endonym_name   }}</a>
+        {% endfor %}
+    </div>
+    <input type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}" id="localeCode">
+{% endform %}
+
+
+<script>
+    document.querySelectorAll("#localeItem").forEach(item => {
+        item.addEventListener("click",  (e) => {
+            document.getElementById("localeCode").value = item.getAttribute("lang");
+            document.getElementById("localization_form").submit()
+        })
+    });
+</script>

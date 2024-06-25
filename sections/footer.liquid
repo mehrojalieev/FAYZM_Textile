@@ -1,0 +1,155 @@
+{%- render 'stylesheet', name: 'footer' -%}
+
+
+<section id="footer" class="footer">
+  <div class="container">
+    <footer class="footer__wrapper" role="img">
+      <a class="footer__logo" href={{ '/' }}>
+        <div>
+          {% if section.settings.footer_logo %}
+            {{section.settings.footer_logo | image_url: width: 170, height: 50 | image_tag: alt: section.settings.footer_logo_alt_text }} 
+          {% endif %}
+          {% if section.settings.footer_logo_placeholder_text %}
+            <p class="visually-hidden">
+              {{ section.settings.footer_logo_placeholder_text }}
+              <br>
+              {% if section.settings.footer_logo_subtitle_text %}
+                <span>{{ section.settings.footer_logo_subtitle_text }}</span>
+              {% endif %}
+            </p>
+          {% endif %}
+        </div>
+      </a>
+      {% for link in linklists['footer'].links %}
+        <ul role="list" class="footer__menu">
+          <li role="listitem" class="footer__menu-item">
+            <a role="link" class="footer-menu-item__link" href="{{ link.url }}">{{ link.title | upcase }}</a>
+          </li>
+          {%- if link.links != blank -%}  
+            {%- for child_link in link.links -%}
+              <li role="listitem" class="footer-submenu__item">
+                <a role="link" class="footer-submenu-item__link" href="{{ child_link.url }}">
+                  {{ child_link.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          {%- endif -%}
+        </ul>
+      {% endfor %}      
+      {% if section.settings.phone_number and section.settings.phone_number > 0 or section.settings.office_number and section.office_number > 0 %}
+        <ul class="footer-contact-us">
+            <li>
+              <a href={{ "/" }}>Contact Us</a>
+            </li>            
+          {% if section.settings.phone_number and section.settings.phone_number > 0 %}
+            <li>
+              <a href="tel:+{{ section.settings.phone_number }}">Phone Number : +{{ section.settings.phone_number }}</a> 
+            </li>
+          {% endif %}
+          {% if section.settings.office_number and section.settings.office_number > 0%}
+            <li>
+              <a href="tel:+{{ section.settings.office_number }}">Office Number : +{{ section.settings.office_number }}</a> 
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+      {% if section.settings.instagram_link or section.settings.twitter_link or section.settings.facebook_link or section.settings.youtube_link %}    
+        <ul class="footer__menu-social">            
+          <li><a  class="footer-social__link" role="link" href="/">SOCIAL</a></li>           
+          <li class="footer-social-logos">
+            {% if section.settings.facebook_link %}
+              <a href="{{ section.settings.facebook_link }}" >{% render "facebook" %}</a>
+            {% endif %}
+            {% if section.settings.instagram_link %} 
+              <a href="{{ section.settings.instagram_link }}" >{% render "instagram" %}</a>
+            {% endif %}
+            {% if section.settings.twitter_link %} 
+              <a href="{{ section.settings.twitter_link }}" >{% render "twitter" %}</a>
+            {% endif %}
+            {% if section.settings.youtube_link %} 
+              <a href="{{ section.settings.youtube_link }}" >{% render "youtube" %}</a>
+            {% endif %}
+          </li>            
+        </ul>
+      {% endif %}
+    </footer>
+    <div class="footer__allright">
+      {% if section.settings.footer__allright %}
+        <span>{{ section.settings.footer__allright }}</span>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+
+{
+  "name": "footer",
+  "settings": [
+    {
+        "type" : "text",
+        "id": "footer_logo_placeholder_text",
+        "label": "Footer logo text",
+        "default": "fayz-m"
+    },
+    {
+        "type" : "text",
+        "id": "footer_logo_subtitle_text",
+        "label": "Footer logo subtitle",
+        "default": "textile"
+    },
+    {
+        "type": "image_picker",
+        "id": "footer_logo",
+        "label": "Footer logo"
+    },
+    {
+      "type": "number",
+      "id": "phone_number",
+      "label": "Phone Number",
+      "default": 998914768189
+    },
+    {
+      "type": "number",
+      "id": "office_number",
+      "label": "Office Number",
+      "default": 998914768189
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook link"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram link"
+    },
+    {
+      "type": "url",
+      "id": "twitter_link",
+      "label": "Twitter link"
+    },
+    {
+      "type": "url",
+      "id": "youtube_link",
+      "label": "Youtube link"
+    },
+    {
+      "type": "text",
+      "id": "footer__allright",
+      "label": "Footer all right text",
+      "default": "Footer all right text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+
+
+{% endschema %}

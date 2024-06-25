@@ -1,0 +1,73 @@
+{%- render 'stylesheet', name: 'faq' -%}
+
+<section class="faq" id="faq" role="info">
+    <div class="container">
+        <h2>Frequently asked questions</h2>
+        <ul role="list" class="faq__wrapper">
+            {% for faq_item in section.blocks %}
+                {% assign index = forloop.index %}
+                <li role="listitem" class="faq__item" aria-expanded="false">
+                    <span>{{index | prepend: '0'}}</span>
+                    <div class="faq__item-wrapper">
+                        <div class="faq-item__header">
+                            <h3>{{ faq_item.settings.faq_title  }}</h3>
+                            <button role="button" class="faq-item__btn">
+                                {% render "icon-cross" %}
+                            </button>
+                        </div>
+                        <div  aria-hidden="true" class="faq-item__body">{{ faq_item.settings.faq_text }}</div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<script>
+    const items = document.querySelectorAll('.faq__item');
+
+    function toggleAccordion() {
+    const itemToggle = this.getAttribute('aria-expanded');
+
+    for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+    }
+
+    if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+    }
+    }
+
+    items.forEach((item) => item.addEventListener('click', toggleAccordion));
+</script>
+
+{% schema %}
+    {
+        "name": "FAQ",
+        "blocks" : [
+            {
+                "name": "FAQ item",
+                "type": "faq_item",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "faq_title",
+                        "label": "FAQ item title",
+                        "default": "Question"
+                    },
+                    {
+                        "type": "text",
+                        "id": "faq_text",
+                        "label": "FAQ item text",
+                        "default": "Answer"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "FAQ"
+            }
+        ]
+    }
+{% endschema %}

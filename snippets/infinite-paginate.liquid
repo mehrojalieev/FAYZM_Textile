@@ -1,0 +1,40 @@
+{% if type == 'load-prev' %}
+    <div data-infinite-paginate-container="{{ type }}">
+      {%- if paginate.previous.is_link -%}
+        <div>
+          <a
+            href="{{ paginate.previous.url }}"
+            data-infinite-paginate-link
+            data-infinite-paginate-loading-class="my-button-disabled-class"
+            data-infinite-paginate-loading-prev-class="my-button-loading-class">
+             previous
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  {% elsif type == 'load-more' %}
+    <div data-infinite-paginate-container="{{ type }}">
+      {%- if paginate.next.is_link -%}
+        <div>
+          <a
+            href="{{ paginate.next.url }}"
+            data-infinite-paginate-link
+            data-infinite-paginate-loading-class="my-button-disabled-class"
+            data-infinite-paginate-loading-more-class="my-button-loading-class">
+            load more
+          </a>
+        </div>
+  
+        {%- liquid
+          assign current_items = paginate.page_size | times: paginate.current_page
+          if current_items > paginate.items
+            assign current_items = paginate.items
+          endif
+        -%}
+        <div>
+          {% comment %} {{  current: current_items }}
+            {{ total: paginate.items }} {% endcomment %}
+        </div>
+      {%- endif -%}
+    </div>
+  {% endif %}

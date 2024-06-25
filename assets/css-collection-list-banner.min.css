@@ -1,0 +1,57 @@
+.collection-list-banner {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.collection-list-banner .desktop-collection-banner {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%);
+}
+.collection-list-banner .mobile-collection-banner {
+  display: none;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%);
+}
+.collection-list-banner .collection-banner__text {
+  position: absolute;
+  font-family: "Syne";
+  font-size: 2.4rem;
+  max-width: 500px;
+  text-align: center;
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 1400px) {
+  .collection-list-banner .desktop-collection-banner {
+    height: 70%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .collection-list-banner .desktop-collection-banner {
+    display: none;
+  }
+  .collection-list-banner .mobile-collection-banner {
+    display: block;
+  }
+  .collection-list-banner .collection-banner__text {
+    bottom: 50px;
+    max-width: 80%;
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 552px) {
+  .collection-list-banner {
+    height: 50vh;
+  }
+  .collection-list-banner .collection-banner__text {
+    font-size: 20px;
+    bottom: 20px;
+  }
+}

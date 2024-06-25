@@ -1,0 +1,74 @@
+.discuss__wrapper {
+  margin: 100px 0;
+}
+.discuss__wrapper h2 {
+  font-size: 50px;
+  font-family: "Syne";
+  font-weight: 800;
+  line-height: 60px;
+}
+.discuss__wrapper p {
+  font-family: "Inter";
+  font-size: 15.5px;
+  line-height: 30px;
+}
+
+.discuss__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 66px;
+}
+.discuss__form div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+.discuss__form div input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #111;
+  transition: 0.3s ease;
+}
+.discuss__form div input:focus {
+  text-indent: 10px;
+}
+.discuss__form textarea {
+  font-size: 16px;
+  height: 113px;
+  border: none;
+  border-bottom: 1px solid #111;
+  outline: none;
+  resize: none;
+  transition: 0.3s ease;
+}
+.discuss__form textarea:focus {
+  text-indent: 10px;
+}
+.discuss__form textarea::-webkit-scrollbar {
+  --webkit-apperance: none;
+  width: 3px;
+  background-color: rgba(85, 85, 85, 0.2666666667);
+}
+.discuss__form textarea::-webkit-scrollbar-thumb {
+  background-color: #111;
+}
+.discuss__form button {
+  font-size: 18px;
+  padding: 16px 46px;
+  align-self: flex-start;
+  border: none;
+  background-color: #111;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.discuss__form button:hover {
+  opacity: 0.9;
+}
+.discuss__form button:active {
+  transform: scale(0.98);
+}

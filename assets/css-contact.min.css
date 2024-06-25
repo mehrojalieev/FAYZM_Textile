@@ -1,0 +1,50 @@
+section.contact {
+  padding: 100px 0;
+}
+section.contact h2 {
+  font-family: "Inter";
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 60px;
+}
+
+.contact__items {
+  display: flex;
+  margin-bottom: 100px;
+  gap: 0 10px;
+  justify-content: space-between;
+}
+.contact__items .contact__item {
+  display: flex;
+  font-family: "Inter";
+  gap: 0 10px;
+}
+.contact__items .contact__item > p {
+  margin-top: 5px;
+}
+.contact__items .contact__item .contact__item-body {
+  font-size: 26px;
+  font-family: "Space";
+  font-weight: 600;
+  max-width: 300px;
+}
+.contact__items .contact__item .contact__item-body a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+@media only screen and (max-width: 767px) {
+  .contact__items {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact__items .contact__item {
+    align-items: center;
+  }
+  section.contact {
+    padding: 50px 0;
+  }
+  section.contact iframe {
+    height: 300px !important;
+  }
+}

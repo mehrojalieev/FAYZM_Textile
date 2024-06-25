@@ -1,0 +1,143 @@
+<style>
+  .loader {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    animation: fadeOutloader 1s forwards;
+    animation-delay: 2s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+
+  .loader-clip {
+    width: 100vw;
+    height: 33.3vh;
+    overflow: clip;
+    position: absolute;
+    z-index: 2000;
+  }
+
+  .clip-top {
+    top: 0;
+    clip-path: inset(0 0 0 0);
+    background-color: #000;
+  }
+
+  .clip-bottom {
+    bottom: 0;
+    clip-path: inset(0 0 0 0);
+    background-color: #000;
+  }
+
+  .clip-center {
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 33.3vh;
+    top: 33.3vh;
+  }
+
+  .marquee {
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200vw;
+    color: #fff;
+    font-size: 10vw;
+  }
+
+  .marquee svg{
+    aspect-ratio: 1 / 1;
+    width: 15vh;
+    height: 15vh;
+  }
+
+  .clip-center .marquee{
+    color: var(--dark);
+  }
+
+  .marquee-container {
+    width: 100%;
+    padding-top: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+  }
+
+  .marquee-container span{
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+  }
+
+  .clip-center span{
+    margin: 0 150px;
+    white-space: nowrap;
+  }
+  
+
+    .loader--fadeOut {
+     animation: fadeInloader 1s forwards;
+    }
+
+  @keyframes fadeInloader {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes fadeOutloader {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+</style>
+<loader class="loader">
+  <div class="loader-clip clip-top">
+    <div class="marquee">
+      <div class="marquee-container">
+        <span> {% render "icon-logo-light" %} FAYZ-M</span>
+        <span> {% render "icon-logo-light" %} FAYZ-M</span>
+        <span> {% render "icon-logo-light" %} FAYZ-M</span>
+        <span> {% render "icon-logo-light" %} FAYZ-M</span>
+      </div>
+    </div>
+  </div>
+  <div class="loader-clip clip-bottom">
+    <div class="marquee">
+      <div class="marquee-container">
+        <span> {% render "icon-logo-light" %} FAYZ-M</span>
+        <span> {% render "icon-logo-light" %} FAYZ-M</span>
+        <span> {% render "icon-logo-light" %} FAYZ-M</span>
+        <span> {% render "icon-logo-light" %} FAYZ-M</span>
+      </div>
+    </div>
+  </div>
+  <div class="clip-center">
+    <div class="marquee">
+      <div class="marquee-container">
+        <span> {% render "icon-logo-dark" %} FAYZ-M</span>
+        <span> {% render "icon-logo-dark" %} FAYZ-M</span>
+        <span> {% render "icon-logo-dark" %} FAYZ-M</span>
+        <span> {% render "icon-logo-dark" %} FAYZ-M</span>
+      </div>
+    </div>
+  </div>
+</loader>

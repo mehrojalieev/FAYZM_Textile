@@ -1,0 +1,23 @@
+{%  render 'stylesheet', name: 'product' %}
+
+<section class="product-section" id="product" role="info" >
+    <div class="container">
+        <div class="product-section__content">
+            {% render 'product-image-gallery', product: product %}
+            <div class="product-section__info">
+                <h1>{{ product.title }}</h1>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".product-section__info p").forEach(p => {
+            if (p.innerHTML === '') {
+                p.remove();
+            }
+        });
+    })
+</script>

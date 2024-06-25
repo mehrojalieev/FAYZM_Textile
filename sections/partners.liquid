@@ -1,0 +1,40 @@
+{%- render 'stylesheet', name: 'partners' -%}
+<section id="partners" class="partners">
+    <div class="container">
+        <div class="partners-wrapper">
+            <h2 class="partners-title">PARTNERS</h2>
+            <div class="partners__card-wrapper">
+                {% for block in section.blocks %}
+                    {{ block.settings.partners_image | image_url: width: 200 | image_tag }} 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Partners",
+        "presets": [
+            {
+                "name": "Partners"
+            }
+        ],
+        "settings": [
+    
+        ],
+        "blocks": [
+            {
+                "type" : "partners_image",
+                "name": "Partners image block",
+                "settings": [
+                    {
+                        "type" : "image_picker",
+                        "id" : "partners_image",
+                        "label" : "Partners image"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

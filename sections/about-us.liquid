@@ -1,0 +1,106 @@
+{%- render 'stylesheet', name: 'about-us'-%}
+<div id="about-us" role="about" class="about-us">
+    <div class="container">
+        {% if section.settings.about_title %}
+            <div class="about-header">
+                <h2>{{ section.settings.about_title }}</h2>
+            </div>
+        {% endif %}
+        <div class="about__wrapper">
+            <div class="content">
+                {% if section.settings.about_text_left %}
+                    <p>{{section.settings.about_text_left}}</p>
+                {% endif %}
+                {% if section.settings.about_link_left_url and section.settings.about_link_text_left %}
+                    <a href="{{ section.settings.about_link_left_url }}" class="link-regular">
+                        {{ section.settings.about_link_text_left   }}
+                        {% render "icon-arrow-top-right" %}
+                    </a>
+                {% endif %}
+                {% if section.settings.about_image_left %}
+                    {{ section.settings.about_image_left | image_url: width: 1400 | image_tag }} 
+                {% endif %}
+            </div>
+            <div class="content">
+                {% if section.settings.about_image_right %}
+                    {{ section.settings.about_image_right | image_url: width: 1400 | image_tag }} 
+                {% endif %}
+                {% if section.settings.about_text_right %}
+                    <p>{{section.settings.about_text_right}}</p>
+                {% endif %}
+                {% if section.settings.about_link_right_url and section.settings.about_link_text_right %}
+                    <a href="{{ section.settings.about_link_right_url }}" class="link-regular">
+                        {{ section.settings.about_link_text_right   }}
+                        {% render "icon-arrow-top-right" %}
+                    </a>
+                {% endif %}
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "About us",
+        "settings": [
+            {
+                "type": "text",
+                "id" : "about_title",
+                "label": "Section title",
+                "default": "about us"
+            },
+            {
+                "type": "text",
+                "id" : "about_text_left",
+                "label": "Section text left",
+                "default": "About content left"
+            },
+            {
+                "type": "text",
+                "id" : "about_text_right",
+                "label": "Section text right",
+                "default": "About content right"
+            },
+            {
+                "type": "url",
+                "id" : "about_link_left_url",
+                "label": "Section link left"
+            },
+            {
+                "type": "url",
+                "id" : "about_link_right_url",
+                "label": "Section link right"
+            },
+            {
+                "type": "text",
+                "id" : "about_link_text_right",
+                "label": "Section link text right"
+            },
+            {
+                "type": "text",
+                "id" : "about_link_text_left",
+                "label": "Section link text left"
+            },
+            {
+                "type": "image_picker",
+                "id" : "about_image_right",
+                "label": "Section image right"
+            },
+            {
+                "type": "image_picker",
+                "id" : "about_image_left",
+                "label": "Section image left"
+            }
+        ],
+        "presets": [
+            {
+                "name": "About us"
+            }
+        ]
+    }
+
+
+{% endschema %}

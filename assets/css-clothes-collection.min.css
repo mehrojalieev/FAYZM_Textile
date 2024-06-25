@@ -1,0 +1,35 @@
+.clothes__collection-banner {
+  height: 550px;
+  background-color: var(--dark);
+  margin: 100px 0;
+  color: var(--light);
+  font-family: "Syne";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.clothes__collection-banner h2 {
+  padding-inline: 20px;
+  font-size: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .clothes__collection-banner {
+    height: 350px;
+  }
+  .clothes__collection-banner h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 552px) {
+  .clothes__collection-banner {
+    height: 250px;
+    padding: 0 20px;
+  }
+  .clothes__collection-banner h2 {
+    font-size: 24px;
+  }
+}

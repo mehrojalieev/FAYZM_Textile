@@ -1,0 +1,178 @@
+{
+  "sections": {
+    "banner": {
+      "type": "banner",
+      "settings": {
+        "banner_video": "shopify:\/\/files\/videos\/Fayz M Textile - Textile Company in Uzbekistan-4k n.mp4",
+        "banner_image_or_video": false,
+        "banner_text": ""
+      }
+    },
+    "whatwedo_Yh7DyE": {
+      "type": "whatwedo",
+      "settings": {
+        "sow_whatwe_do": true,
+        "whatwedo_title": "MULTI-SECTOR TEXTILE COMPANY",
+        "whatwedo_text": "How we work: Seed production, raw cotton production, cotton processing, oil production, flour production, cotton spinning, fabric production, ready-made knitwear and animal husbandry.",
+        "whatwedo_btn": "BETTER KNOW US",
+        "whatwedo_link": "shopify:\/\/pages\/about"
+      }
+    },
+    "partners": {
+      "type": "partners",
+      "blocks": {
+        "partners_image_cjVFpn": {
+          "type": "partners_image",
+          "settings": {
+            "partners_image": "shopify:\/\/shop_images\/happy.svg"
+          }
+        },
+        "partners_image_q4GdgH": {
+          "type": "partners_image",
+          "settings": {
+            "partners_image": "shopify:\/\/shop_images\/nacivott.svg"
+          }
+        },
+        "partners_image_tykEBT": {
+          "type": "partners_image",
+          "settings": {
+            "partners_image": "shopify:\/\/shop_images\/lia.svg"
+          }
+        },
+        "partners_image_83HBrE": {
+          "type": "partners_image",
+          "settings": {
+            "partners_image": "shopify:\/\/shop_images\/karelpiu.svg"
+          }
+        },
+        "partners_image_3TVmJX": {
+          "type": "partners_image",
+          "settings": {
+            "partners_image": "shopify:\/\/shop_images\/incolor.svg"
+          }
+        },
+        "partners_image_RwrmRR": {
+          "type": "partners_image",
+          "settings": {
+            "partners_image": "shopify:\/\/shop_images\/binary.svg"
+          }
+        }
+      },
+      "block_order": [
+        "partners_image_cjVFpn",
+        "partners_image_q4GdgH",
+        "partners_image_tykEBT",
+        "partners_image_83HBrE",
+        "partners_image_3TVmJX",
+        "partners_image_RwrmRR"
+      ],
+      "settings": {
+      }
+    },
+    "about_us_EWGNGK": {
+      "type": "about-us",
+      "settings": {
+        "about_title": "about us",
+        "about_text_left": "FAYZ-M is mainly a textile manufacturer located in Uzbekistan, Andijan. We have many different high quality and in demand products and services. We are recognized internationally and export our goods to several countries.",
+        "about_text_right": "How we work: Seed production, raw cotton production, cotton processing, oil production, flour production, cotton spinning, fabric production, ready-made knitwear and animal husbandry.",
+        "about_link_left_url": "shopify:\/\/pages\/contact",
+        "about_link_right_url": "shopify:\/\/pages\/contact",
+        "about_link_text_right": "About the process",
+        "about_link_text_left": "About the company",
+        "about_image_right": "shopify:\/\/shop_images\/4K3A3191-min_1.jpg",
+        "about_image_left": "shopify:\/\/shop_images\/356A1189-min.jpg"
+      }
+    },
+    "collection_banner_hdYX39": {
+      "type": "collection-banner",
+      "settings": {
+        "carousel_banner_subtitle": "WOMEN",
+        "carousel_banner_title": "\"Bold & Beautiful Collection\"",
+        "carousel_banner_description": "\"Bold & Beautiful: Confidence, Style, Vibrance - Embrace Your Unique Beauty.\"",
+        "banner_desktop": "shopify:\/\/shop_images\/4K3A0203_2.jpg",
+        "carousel_banner_card_title": "WOMEN",
+        "carousel_banner_card_text": "\"fayz-m's pure cotton perfection\"",
+        "card_text": "Explore",
+        "card_url": "shopify:\/\/collections"
+      }
+    },
+    "product_carousel_UCkQ3J": {
+      "type": "product-carousel",
+      "settings": {
+        "section_collection": "women"
+      }
+    },
+    "new_releases_HijC4a": {
+      "type": "new-releases",
+      "settings": {
+        "new-releases_title": "KEEP THE FASHION",
+        "new-released_link": "Know more",
+        "new-releases_link_left_url": "shopify:\/\/collections",
+        "new-releases_image-right": "shopify:\/\/shop_images\/4K3A0338_1_1.jpg",
+        "new-releases_text_inside": "New Releases",
+        "section_image_side": "left"
+      }
+    },
+    "collection_banner_UExiWf": {
+      "type": "collection-banner",
+      "settings": {
+        "carousel_banner_subtitle": "sport colection",
+        "carousel_banner_title": "“GO EXTREME”",
+        "carousel_banner_description": "Wear for running, cardio and training. Wear without fear of damaging or tearing.",
+        "banner_desktop": "shopify:\/\/shop_images\/4K3A0030_1.jpg",
+        "carousel_banner_card_title": "SPORT COLLECTION",
+        "carousel_banner_card_text": "MADE FOR EXTREME ACTIONS",
+        "card_text": "Know more",
+        "card_url": "shopify:\/\/collections"
+      }
+    },
+    "product_carousel_dBeXaq": {
+      "type": "product-carousel",
+      "settings": {
+        "section_collection": "men"
+      }
+    },
+    "new_releases_HL7H63": {
+      "type": "new-releases",
+      "settings": {
+        "new-releases_title": "KEEP THE POWER",
+        "new-released_link": "know more",
+        "new-releases_link_left_url": "shopify:\/\/pages\/about",
+        "new-releases_image-right": "shopify:\/\/shop_images\/DSC06540.jpg",
+        "new-releases_text_inside": "New Releases",
+        "section_image_side": "right"
+      }
+    },
+    "feature_jpeHeV": {
+      "type": "feature",
+      "settings": {
+        "banner_title": "WE HAVE DIFFERENT DNA",
+        "banner_text": "Discover the DNA of style with Fayz-m Textile Company. From vibrant hues to timeless classics, our collection boasts a kaleidoscope of colors to suit every taste. Unveil your fashion identity with our exquisite range of garments. Embrace diversity, express yourself, and redefine elegance with Fayz-m.",
+        "banner_video": "shopify:\/\/files\/videos\/7aa8b2635c5d40bfa5b5d2071f4a0732 (1).mp4"
+      }
+    },
+    "clothes_collection": {
+      "type": "clothes-collection",
+      "settings": {
+        "clothes_collection_banner_title": "LARGE COLLECTION OF CLOTHES",
+        "clothes_collection_btn": "Know more",
+        "collection_link": "shopify:\/\/collections",
+        "clothes_collection_image": "shopify:\/\/shop_images\/DSC06872.jpg"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "whatwedo_Yh7DyE",
+    "partners",
+    "about_us_EWGNGK",
+    "collection_banner_hdYX39",
+    "product_carousel_UCkQ3J",
+    "new_releases_HijC4a",
+    "collection_banner_UExiWf",
+    "product_carousel_dBeXaq",
+    "new_releases_HL7H63",
+    "feature_jpeHeV",
+    "clothes_collection"
+  ]
+}

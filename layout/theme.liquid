@@ -1,0 +1,37 @@
+<html>
+  <head>
+    {{ content_for_header }}
+    {%- assign common_css_url = 'common.css' | asset_url -%}
+    {%- render 'stylesheet', name: common_css_url -%}
+    {%- render 'favicon' -%}
+    {% if canonical_url == 'https://fayzm.uz/collections' %}
+      <title>FAYZ-M | COLLECTIONS</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% else %}
+      <title>{{- page_title | upcase -}}</title>
+      <meta
+        name="description"
+        content="Explore our diverse range of collections, each offering a unique blend of textures, colors, and patterns. From timeless classics to contemporary chic, FAYZ-M Collections embodies versatility and quality, ensuring that every fabric tells a story of craftsmanship and excellence."
+      >
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% endif %}
+  </head>
+  <body>
+    {% comment %} {% render 'loader' %} {% endcomment %}
+    <component-loader class="page-wrapper">
+      {% section 'announcement-bar' %}
+      {%- section 'navigation' -%}
+      <main id="main" role="main">
+        {{ content_for_layout }}
+      </main>
+      {% section 'contact-form' %}
+      {% comment %} {% section 'footer' %} {% endcomment %}
+    </component-loader>
+    <script src="{{ 'js-gsap.min.js' | asset_url }}"></script>
+    {%- render 'component-loader' -%}
+  </body>
+</html>

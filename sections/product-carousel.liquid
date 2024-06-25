@@ -1,0 +1,36 @@
+{%- render 'stylesheet', name: 'product-carousel' -%}
+
+<section class="product-carousel">
+    <product-carousel data-section-id="{{ section.id }}">
+       <div class="product-carousel__wrapper">
+            <div class="carousel">
+                {% assign collection = section.settings.section_collection %}
+                {% if collection.products.size > 0 %}
+                    {% for product in collection.products %}
+                        {% if product.featured_image %}
+                             {% render 'product-card', product_card: product %}
+                        {% endif %}
+                     {% endfor %}
+                {% endif %}
+            </div>
+       </div>
+    </product-carousel>
+</section>
+
+{% schema %}
+    {
+        "name": "Product carousel",
+        "settings": [
+            {
+                "type" : "collection",
+                "id": "section_collection",
+                "label": "Choose collection for this section"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Product carousel"
+            }
+        ]
+    }
+{% endschema %}

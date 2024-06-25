@@ -1,0 +1,75 @@
+@import "~sass-rem/rem";
+
+@mixin media($breakpoint, $name: max) {
+  @if ($name == max) {
+    @media only screen and (max-width: $breakpoint) {
+      @content;
+    }
+  } @else if ($name == min) {
+    $breakpoint: $breakpoint + 1px;
+    @media only screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @error "Unknown query name: #{$name}";
+  }
+}
+
+@mixin loading(
+  $top: 5px,
+  $left: auto,
+  $bottom: auto,
+  $right: 5px,
+  $psydoElement: after,
+  $color: var(--color-1)
+) {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+
+  &::#{$psydoElement} {
+    content: "";
+    position: absolute;
+    top: $top;
+    right: $right;
+    left: $left;
+    bottom: $bottom;
+    display: block;
+    width: rem(10px);
+    height: rem(10px);
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $color $color $color transparent;
+    animation: loading 0.5s linear infinite;
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+//breakpoints
+$desktop-s: 1150px;
+$tablet-l: 991px;
+$tablet: 767px;
+$mobile: 479px;
+
+@mixin font1($weight: 500) {
+  font-family: var(--font-1);
+  font-weight: $weight;
+}
+
+@mixin font2 {
+  font-family: var(--font-2);
+  font-weight: 400;
+}
